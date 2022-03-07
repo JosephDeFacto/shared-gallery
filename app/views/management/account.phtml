@@ -1,0 +1,17 @@
+<?php include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'header.phtml'; ?>
+
+<div class="form-section">
+    <form method="POST" action="">
+        <label for="password">Password: </label>
+        <input type="password" name="password">
+
+        <label for="newpassword">New Password: </label>
+        <input type="password" name="newpassword">
+
+        <input type="submit" name="submit" value="Update">
+    </form>
+</div>
+
+<div class="form-section">
+    <a href="../ManagementController/removeAcc?id=<?php echo $_SESSION['userID']; ?>">Remove Account</a>
+</div>

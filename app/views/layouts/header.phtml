@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+    <title>Shared Gallery</title>
+    <link rel="stylesheet" href="<?php echo \App\Core\Config::config('url') ?>/public/css/style.css" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="<?php echo \App\Core\Config::config('url'); ?>/public/ajax.js"></script>-->
+</head>
+<body>
+<div class="head-nav">
+    <h1 class="head" style="text-align: center"><a style="text-decoration: none" href="<?php echo 'SITE_ROOT';?>/HomeController/index">Shared Gallery</a></h1>
+    <?php require dirname(__DIR__) . '/layouts/navbar.phtml'; ?>
+</div>
+
+<div class="container">

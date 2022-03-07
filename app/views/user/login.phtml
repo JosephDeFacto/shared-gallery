@@ -1,0 +1,27 @@
+
+<form action="" method="POST">
+
+    <div class="form">
+        <label for="username">Username: </label>
+        <input type="text" name="username">
+    </div>
+    <div class="form">
+        <label for="email">Email:</label>
+        <input type="email" name="email">
+    </div>
+
+    <div class="form">
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+    </div>
+
+    <div class="form">
+        <label for="remember_me">
+            <input type="checkbox" name="remember_me" id="remember_me" value="checked" <?php $inputs['remember_me'] ?? '' ; ?>/>
+            Remember me
+        </label>
+    </div>
+    <input type="submit" name="submit" value="submit">
+    <p>Are you new? <span><a href="./register">Register!</a></span></p>
+</form>
+

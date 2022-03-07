@@ -1,0 +1,19 @@
+<?php //session_start(); ?>
+<?php
+
+if (isset($_SESSION['username'])) { ?>
+
+    <div class="navigation-bar">
+        <a href="<?php echo SITE_PATH; ?>/HomeController/index">Home</a>
+        <a href="<?php echo SITE_PATH; ?>/ManagementController/index">Management</a>
+        <a href="<?php echo SITE_PATH; ?>/ManagementController/account">Account</a>
+        <a href="<?php echo SITE_PATH; ?>/UserController/logout">Logout</a>
+    </div>
+<?php
+} else {
+    ?>
+<span>Already have an account? </span><a href="<?php echo SITE_PATH; ?>/UserController/login">Login</a>
+<?php
+}
+
+
