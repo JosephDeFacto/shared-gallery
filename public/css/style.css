@@ -1,0 +1,191 @@
+body {
+    width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.head-wrapper {
+    text-align: center;
+}
+
+.link-href-wrapper {
+    color: darkseagreen;
+    text-decoration: none;
+}
+
+.link-href-wrapper:hover {
+    color: coral;
+}
+
+.container {
+    background: darkseagreen;
+}
+
+#submitBtn {
+    padding: 10px;
+    display: flex;
+    cursor: pointer;
+    color: darkseagreen;
+    border: none;
+}
+
+#submitBtn:hover {
+    background: coral;
+    padding: 20px;
+    color: black;
+}
+
+.paragraph-wrapper {
+    padding: 10px;
+    color: darkseagreen;
+}
+
+#count-wrapper {
+    margin: 10px;
+    color: brown;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.form-upload-wrapper {
+    margin-top: 15px;
+    margin-right: 0px;
+    margin-left: 50px;
+}
+
+.table-wrapper {
+    margin-top: 15px;
+}
+
+img {
+    width: 252px;
+    height: 200px;
+}
+
+input[type=submit] {
+    border: none;
+    cursor: pointer;
+    background: darkseagreen;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+input[type=submit]:hover {
+    background: coral;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input[type=file] {
+    border: none;
+    cursor: pointer;
+    background: darkseagreen;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input[type=file]:hover {
+    background: coral;
+    padding: 10px;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+}
+
+input[type=text]:focus {
+    background: coral;
+}
+
+input[type=email]:focus {
+    background: coral;
+}
+
+input[type=password]:focus {
+    background: coral;
+}
+
+.nav-link {
+    float: right;
+    margin: 20px;
+    text-decoration: none;
+}
+
+.nav-link-login {
+    text-decoration: none;
+    color: darkseagreen;
+}
+
+.nav-link-login:hover {
+    background: coral;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+}
+
+.nav-link:hover {
+    background: coral;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.remove-link:hover {
+    background: coral;
+    border-radius: 5px;
+}
+
+.signup, .login, .account {
+    margin-top: 10px;
+}
+
+.signup-container, .login-container, .account-wrapper {
+    display: grid !important;
+    grid-auto-columns: max-content !important;
+    padding-top: 20px !important;
+}
+
+.register-btn {
+    margin-top: 5px;
+}
+
+.register-question {
+    text-decoration: none;
+    color: darkseagreen;
+}
+
+.register-question:hover {
+    background: coral;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+}
+
+.remove-link {
+    text-decoration: none;
+    margin-top: 10px;
+    color: black;
+}
+
+.table-row {
+    display: grid;
+}
+
+.table-data-wrapper {
+    text-align: center;
+    margin: 10px;
+    color: slategray;
+    cursor: pointer;
+}
+
+.delete-link {
+    text-decoration: none;
+    background: darkseagreen;
+    color: black;
+    padding: 5px;
+}
+
+.delete-link:hover {
+    border-radius: 5px;
+    background: coral;
+    padding: 10px;
+}

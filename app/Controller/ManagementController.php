@@ -17,7 +17,6 @@ class ManagementController
 
     public function index()
     {
-        //session_start();
         if ($_SESSION['username']) {
             header('Location ../UserController/login');
         }
@@ -78,11 +77,10 @@ class ManagementController
             header('Location ../UserController/login');
         }
 
+        $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_URL);
         $id = isset($_GET['id']) ? $_GET['id'] : [];
 
         $getImage = $image->getImage($id);
-
-        var_dump($getImage);
 
         $filename = $getImage['filename'];
         $deletePath = dirname(__DIR__, 2) . '/public/media/' . $filename;

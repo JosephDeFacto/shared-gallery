@@ -1,36 +1,42 @@
 <?php include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'header.phtml'; ?>
 
-<form method="post" action="" enctype="multipart/form-data">
-    <input type="file" name="filename[]" id="file" multiple>
+<div class="form-upload-wrapper">
+    <form method="post" action="" enctype="multipart/form-data">
+        <input type="file" name="filename[]" id="file" multiple>
 
-    <input type="submit" name="submit" value="Upload">
-</form>
+        <input type="submit" name="submit" value="Upload">
+    </form>
+</div>
 
-<table>
+<table class="table-wrapper">
+    <thead>
     <?php
 
     if (isset($images)) {
+        ?>
+    <tr class="table-row-wrapper">
+        <!--
+        <th class="table-head-wrapper">Image</th>
+        <th class="table-head-wrapper">Username</th>
+        <th class="table-head-wrapper">Email</th>
+        -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="table-row">
+        <?php
         foreach ($images as $image) {
             ?>
-            <tr>
-                <td><img src="<?php echo '../public/media/' . $image['filename']; ?>"</td>
-
-                <td><?php echo $image['username']; ?></td>
-
-                <td><?php echo $image['email']; ?></td>
-                <td>
-                    <?php if ($image['username'] == $_SESSION['username']) {
-
-                        ?>
-                    <a href="../ManagementController/removeImage?id=<?php echo $image['id']; ?>">Delete</a>
-                <?php
-                    }
-                     ?>
-                </td>
+            <td class="table-data-wrapper"><img src="<?php echo '../public/media/' . $image['filename']; ?>"</td>
+            <td class="table-data-wrapper"><?php echo $image['username']; ?></td>
+            <td class="table-data-wrapper"><?php echo $image['email']; ?></td>
+                <?php if ($image['username'] == $_SESSION['username']) { ?>
+                <td class="table-data-wrapper"><a class="delete-link" href="../ManagementController/removeImage?id=<?php echo $image['id']; ?>">Delete</a></td>
             </tr>
+                <?php } ?>
     <?php
         }
     }
-
-    ?>
+        ?>
+    </tbody>
 </table>

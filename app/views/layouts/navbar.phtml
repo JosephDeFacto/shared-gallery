@@ -1,18 +1,21 @@
 <?php //session_start(); ?>
 <?php
 
-if (isset($_SESSION['username'])) { ?>
+if (isset($_SESSION['isLoggedIn'])) { ?>
 
     <div class="navigation-bar">
-        <a href="<?php echo SITE_PATH; ?>/HomeController/index">Home</a>
-        <a href="<?php echo SITE_PATH; ?>/ManagementController/index">Management</a>
-        <a href="<?php echo SITE_PATH; ?>/ManagementController/account">Account</a>
-        <a href="<?php echo SITE_PATH; ?>/UserController/logout">Logout</a>
+        <a class="nav-link" href="<?php echo SITE_PATH; ?>/UserController/logout">Logout</a>
+        <a class="nav-link" href="<?php echo SITE_PATH; ?>/ManagementController/account">Account</a>
+        <a class="nav-link" href="<?php echo SITE_PATH; ?>/ManagementController/index">Management</a>
+        <a class="nav-link" href="<?php echo SITE_PATH; ?>/HomeController/index">Home</a>
+
+
+
     </div>
 <?php
 } else {
     ?>
-<span>Already have an account? </span><a href="<?php echo SITE_PATH; ?>/UserController/login">Login</a>
+<span>Already have an account? </span><a class="nav-link-login" href="<?php echo SITE_PATH; ?>/UserController/login">Login</a>
 <?php
 }
 

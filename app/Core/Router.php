@@ -39,7 +39,6 @@ class Router
                 $controller = "\\app\\Controller\\" . ucfirst($this->controller);
                 $this->controller = new $controller();
 
-
                 if (method_exists($this->controller, $this->action)) {
 
                     if (!empty($this->params)) {

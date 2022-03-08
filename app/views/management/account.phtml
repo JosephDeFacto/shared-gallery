@@ -1,17 +1,19 @@
 <?php include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'header.phtml'; ?>
 
-<div class="form-section">
+<div class="account">
     <form method="POST" action="">
-        <label for="password">Password: </label>
-        <input type="password" name="password">
+        <div class="account-wrapper">
 
-        <label for="newpassword">New Password: </label>
-        <input type="password" name="newpassword">
+            <label for="password">Password: </label>
+            <input type="password" name="password">
 
-        <input type="submit" name="submit" value="Update">
+            <label for="newpassword">New Password: </label>
+            <input type="password" name="newpassword">
+
+            <input type="submit" name="submit" value="Update">
+
+            <a class="remove-link" href="../ManagementController/removeAcc?id=<?php echo $_SESSION['userID']; ?>">Remove Account</a>
+            </div>
+        </div>
     </form>
-</div>
-
-<div class="form-section">
-    <a href="../ManagementController/removeAcc?id=<?php echo $_SESSION['userID']; ?>">Remove Account</a>
 </div>

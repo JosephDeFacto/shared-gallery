@@ -1,21 +1,21 @@
 <?php include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'header.phtml'; ?>
 
-<p>Click below to see number of images</p>
+<p class="paragraph-wrapper">Click below to see number of images</p>
 
-<button type="button" id="submitBtn">Show</button>
-<div id="count-wrapper">
+<div class="counter-wrapper">
+    <button type="button" id="submitBtn">Show</button>
+    <div id="count-wrapper">
 
+    </div>
 </div>
 
     <script>
-
         let countWrapper = document.querySelector('#count-wrapper');
         let submitBtn = document.querySelector('#submitBtn');
         submitBtn.addEventListener('click', () => {
             fetch('/shared-gallery/HomeController/numberOfImages/')
                 .then(response => response.json())
                 .then((data) => {
-                    //submitBtn.textContent = result + ' image(s)';
                     countWrapper.textContent = data;
                 });
         });

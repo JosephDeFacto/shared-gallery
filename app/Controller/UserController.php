@@ -48,7 +48,8 @@ class UserController
             ];
 
             if(empty($data['firstname'])){
-                $data['firstname_err'] = 'Enter first name';
+                echo "<script>alert('Enter your first name')";
+                exit();
             }
 
 
@@ -78,7 +79,6 @@ class UserController
                 }
             }
 
-            // Make sure errors are empty
             if(empty($data['firstname_err']) && empty($data['lastname_err'])
                 && empty($data['username_err'])
                 && empty($data['email_err'])
@@ -122,22 +122,23 @@ class UserController
         $user = new User();
 
         //$this->view->render('user/login');
-
+        $day = 30;
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
 
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $_SESSION['username'] = $username;
-
+            setcookie('remember_user', $_POST["username"], time() + 60 * 60 * 24 * $day);
 
             if ($user->login($username, $email, $password)) {
 
                 $id = $user->getId();
+                $username = $user->getUsername();
 
                 $_SESSION['userID'] = $id;
+                $_SESSION['username']  = $username;
+                $_SESSION['isLoggedIn'] = true;
 
                 header('Location: ../HomeController/index', true, 301);
             } else {
@@ -151,14 +152,14 @@ class UserController
 
     public function logout()
     {
-        //session_start();
-        if (isset($_SESSION['username'])) {
-            unset($_SESSION['username']);
-            session_destroy();
+
+        if (isset($_SESSION['username']) && isset($_SESSION['userID']) && isset($_SESSION['isLoggedIn'])) {
+            session_unset(); // deletes variables from session
+            //unset($_SESSION['username']);
+            session_destroy(); // destroys all the data associated with the current session
 
             header('Location: ../HomeController/index', true, 301);
             exit();
         }
     }
-
 }

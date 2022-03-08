@@ -133,7 +133,7 @@ class User
      */
     public function login($username, $email, $password)
     {
-        $sql = "SELECT id FROM user WHERE username = :username OR email = :email OR password = :password";
+        $sql = "SELECT id, username FROM user WHERE username = :username OR email = :email OR password = :password";
         $stmt = DB::getInstance()->prepare($sql);
 
         $stmt->bindParam(':username', $username);
@@ -145,14 +145,9 @@ class User
         $rows = $stmt->fetch(PDO::FETCH_ASSOC);
 
         $this->id = $rows['id'];
+        $this->username = $rows['username'];
 
-        return $this->id;
-        //$id = null;
-
-        /*while ($rows = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $this->id = $rows['id'];
-        }
-        return $this->id;*/
+        return $this->id . $this->username;
     }
 
     public function changePassword($data)
@@ -185,13 +180,4 @@ class User
 
     }
 
-    public function checkEmail()
-    {
-
-    }
-
-    public function checkUsername()
-    {
-
-    }
 }
